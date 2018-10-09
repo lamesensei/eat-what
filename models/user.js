@@ -15,8 +15,18 @@ module.exports = (pool) => {
     });
   };
 
+  const login = (params, callback) => {
+    const statement = 'SELECT * FROM users WHERE login = ($1)';
+    const values = [params.login];
+
+    pool.query(statement, values, (err, result) => {
+      callback(err, result);
+    });
+  };
+
   return {
     encrypt,
     create,
+    login,
   };
 };

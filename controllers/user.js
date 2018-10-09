@@ -21,9 +21,29 @@ module.exports = (db) => {
     res.render('users/login');
   };
 
+  const login = (req, res) => {
+    db.user.login(req.body, (err, result) => {
+      if (err) console.error('Login failure: ', err);
+      else if (result.rowCount >= 1) {
+        const dbPassword = result.rows[0].password;
+        const entered = db.user.encrypt(req.body.password);
+        if (entered === dbPassword) {
+          res.cookie('loggedin', {
+            id: result.rows[0].id,
+            login: req.body.login,
+            hash: db.user.encrypt(req.body.login),
+          });
+          res.redirect('/');
+        }
+        res.render('users/login', { wrong: 'true' });
+      }
+    });
+  };
+
   return {
     newForm,
     create,
     loginForm,
+    login,
   };
 };

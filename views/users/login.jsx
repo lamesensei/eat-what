@@ -3,7 +3,10 @@ const Default = require('../layout/Default');
 
 class Login extends React.Component {
   render() {
-    const eslintshutup = this.props;
+    let error = 'invisible';
+    if (this.props.wrong) {
+      error = 'alert alert-danger';
+    }
     return (
       <Default>
         <div className="container">
@@ -19,6 +22,9 @@ class Login extends React.Component {
             <button type="submit" className="btn btn-primary mb-2">
               Login
             </button>
+            <div className={error} role="alert">
+              Wrong details entered, try again!
+            </div>
           </form>
         </div>
       </Default>
