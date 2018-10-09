@@ -21,8 +21,8 @@ class Home extends React.Component {
               EAT <br /> WHAT?
             </h1>
             <h1 className={welcome}>
-              Welcome {user}, <br />
-              <a href="#" className="btn btn-lg btn-outline-light">
+              Hey {user}! <br />
+              <a href="#" className="btn btn-lg btn-light">
                 LETS GO
               </a>
             </h1>

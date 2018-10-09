@@ -2,6 +2,15 @@ const React = require('react');
 
 class Default extends React.Component {
   render() {
+    let logout;
+    if (this.props.currentUser) {
+      console.log('yo');
+      logout = (
+        <form method="post" action="/users/logout" className="navbar-text">
+          <input type="submit" value="logout" />
+        </form>
+      );
+    }
     return (
       <html>
         <head>
@@ -23,7 +32,8 @@ class Default extends React.Component {
                 EAT WHAT?
               </a>
               <a className="navbar-text" href="#">
-                {this.props.currentUser}
+                {logout}
+                <u>{this.props.currentUser}</u>
               </a>
             </nav>
           </header>

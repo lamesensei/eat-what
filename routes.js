@@ -6,4 +6,5 @@ module.exports = (app, db) => {
   app.get('/users/login', user.loginForm);
   app.post('/users', user.create);
   app.post('/users/login', user.login);
+  app.post('/users/logout', user.logout);
 };

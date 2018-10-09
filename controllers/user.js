@@ -40,10 +40,16 @@ module.exports = (db) => {
     });
   };
 
+  const logout = (req, res) => {
+    res.clearCookie('loggedin');
+    res.redirect('/');
+  };
+
   return {
     newForm,
     create,
     loginForm,
     login,
+    logout,
   };
 };
