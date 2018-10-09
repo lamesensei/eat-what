@@ -12,7 +12,7 @@ module.exports = (db) => {
           login: req.body.login,
           hash: db.user.encrypt(req.body.login),
         });
-        res.send(`${req.body.login} logged in`);
+        res.redirect('/');
       }
     });
   };

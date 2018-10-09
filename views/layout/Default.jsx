@@ -22,6 +22,9 @@ class Default extends React.Component {
               <a className="navbar-brand logo" href="/">
                 EAT WHAT?
               </a>
+              <a className="navbar-text" href="#">
+                {this.props.currentUser}
+              </a>
             </nav>
           </header>
           <div className="container-fluid h-100">{this.props.children}</div>

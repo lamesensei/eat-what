@@ -26,7 +26,10 @@ routes(app, db);
 const server = app.listen(PORT, console.log(`Server initialized at port ${PORT}`));
 
 app.get('/', (req, res) => {
-  res.render('home');
+  let currentUser;
+  if (req.cookies.loggedin) currentUser = req.cookies.loggedin;
+  else currentUser = null;
+  res.render('home', { currentUser });
 });
 
 server.on('close', () => {
