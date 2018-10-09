@@ -1,4 +1,6 @@
+let user = require('./controllers/user');
+
 module.exports = (app, db) => {
-  const user = require('./controllers/user')(db);
+  user = user(db);
   app.get('/users/new', user.newForm);
 };

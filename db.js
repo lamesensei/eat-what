@@ -15,9 +15,8 @@ pool.on('error', (err) => {
 });
 
 module.exports = {
+  pool,
   user: user(pool),
 
   query: (statement, values, callback) => pool.query(statement, values, callback),
-
-  pool,
 };

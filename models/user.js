@@ -1,1 +1,1 @@
-module.exports = (dbPool) => {};
+module.exports = (pool) => {};

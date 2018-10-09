@@ -25,7 +25,7 @@ routes(app, db);
 const server = app.listen(PORT, console.log(`Server initialized at port ${PORT}`));
 
 app.get('/', (req, res) => {
-  res.send('homepage');
+  res.render('home');
 });
 
 server.on('close', () => {
