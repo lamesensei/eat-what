@@ -18,7 +18,7 @@ class Default extends React.Component {
         </head>
         <body className={this.props.bodyclasslist}>
           <header>
-            <nav className="navbar navbar-light bg-light">
+            <nav className="navbar navbar-light bg-light fixed-top">
               <a className="navbar-brand logo" href="/">
                 EAT WHAT?
               </a>
