@@ -1,12 +1,32 @@
 html,
 body {
   height: 100%;
-  color: white;
+  width: 100%;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
 }
 
 .logo {
   font-family: 'Chelsea Market', cursive;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
   color: white;
 }
 

@@ -11,11 +11,11 @@ class Home extends React.Component {
             EAT <br /> WHAT?
           </h1>
         </div>
-        <nav class="navbar fixed-bottom justify-content-center">
-          <a class="btn btn-lg btn-outline-light m-4" href="#">
+        <nav className="navbar fixed-bottom justify-content-center">
+          <a className="btn btn-lg btn-outline-light m-4 font-weight-bold" href="#">
             LOGIN
           </a>
-          <a class="btn btn-lg btn-outline-light m-4" href="#">
+          <a className="btn btn-lg btn-outline-light m-4 font-weight-bold" href="/users/new">
             SIGNUP
           </a>
         </nav>

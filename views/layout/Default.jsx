@@ -14,11 +14,15 @@ class Default extends React.Component {
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossOrigin="anonymous"
           />
-          <link rel="stylesheet" href="stylesheets/main.css" />
+          <link rel="stylesheet" href="/stylesheets/main.css" />
         </head>
         <body className={this.props.bodyclasslist}>
           <header>
-            <nav />
+            <nav className="navbar navbar-light bg-light">
+              <a className="navbar-brand logo" href="/">
+                EAT WHAT?
+              </a>
+            </nav>
           </header>
           <div className="container-fluid h-100">{this.props.children}</div>
         </body>

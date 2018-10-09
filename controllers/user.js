@@ -1,7 +1,6 @@
 module.exports = (db) => {
   const newForm = (req, res) => {
-    // res.render('users/login');
-    res.send('this should be the login form');
+    res.render('users/signup');
   };
 
   return {
