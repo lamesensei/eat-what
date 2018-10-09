@@ -29,7 +29,7 @@ class Home extends React.Component {
           </div>
         </div>
         <nav className={bottom}>
-          <a className="btn btn-lg btn-outline-light m-4 font-weight-bold" href="#">
+          <a className="btn btn-lg btn-outline-light m-4 font-weight-bold" href="/users/login">
             LOGIN
           </a>
           <a className="btn btn-lg btn-outline-light m-4 font-weight-bold" href="/users/new">

@@ -17,8 +17,13 @@ module.exports = (db) => {
     });
   };
 
+  const loginForm = (req, res) => {
+    res.render('users/login');
+  };
+
   return {
     newForm,
     create,
+    loginForm,
   };
 };
