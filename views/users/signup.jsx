@@ -10,15 +10,27 @@ class Signup extends React.Component {
           <form className="" action="/users" method="post">
             <div className="form-group">
               <label>Name</label>
-              <input type="text" className="form-control" placeholder="John Doe" required />
+              <input
+                type="text"
+                className="form-control"
+                name="name"
+                placeholder="John Doe"
+                required
+              />
             </div>
             <div className="form-group">
               <label>Username</label>
-              <input type="text" className="form-control" placeholder="johndoe91" required />
+              <input
+                type="text"
+                className="form-control"
+                name="login"
+                placeholder="johndoe91"
+                required
+              />
             </div>
             <div className="form-group">
               <label>Password</label>
-              <input type="password" className="form-control" required />
+              <input type="password" className="form-control" name="password" required />
             </div>
             <button type="submit" className="btn btn-primary mb-2">
               Submit
