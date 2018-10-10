@@ -9,6 +9,6 @@ module.exports = (app, db) => {
   app.post('/users/login', user.login);
   app.post('/users/logout', user.logout);
 
-  food = food(db);
+  food = food(db, user);
   app.get('/food/start', food.start);
 };

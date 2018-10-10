@@ -45,11 +45,23 @@ module.exports = (db) => {
     res.redirect('/');
   };
 
+  const checkLogin = (cookie) => {
+    if (db.user.encrypt(cookie.login) === cookie.hash) {
+      console.log('authenticated');
+      return true;
+    }
+    return false;
+  };
+
+  const test = string => console.log(string);
+
   return {
     newForm,
     create,
     loginForm,
     login,
     logout,
+    checkLogin,
+    test,
   };
 };
