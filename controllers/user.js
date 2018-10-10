@@ -46,10 +46,7 @@ module.exports = (db) => {
   };
 
   const checkLogin = (cookie) => {
-    if (db.user.encrypt(cookie.login) === cookie.hash) {
-      console.log('authenticated');
-      return true;
-    }
+    if (db.user.encrypt(cookie.login) === cookie.hash) return true;
     return false;
   };
 
