@@ -1,5 +1,6 @@
 const pg = require('pg');
 const user = require('./models/user');
+const food = require('./models/food');
 
 const configs = {
   user: 'lamesensei',
@@ -17,6 +18,7 @@ pool.on('error', (err) => {
 module.exports = {
   pool,
   user: user(pool),
+  food: food(pool),
 
   query: (statement, values, callback) => pool.query(statement, values, callback),
 };

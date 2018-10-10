@@ -11,4 +11,5 @@ module.exports = (app, db) => {
 
   food = food(db, user);
   app.get('/food/start', food.start);
+  app.get('/food/solo', food.solo);
 };
