@@ -4,10 +4,9 @@ class Default extends React.Component {
   render() {
     let logout;
     if (this.props.currentUser) {
-      console.log('yo');
       logout = (
         <form method="post" action="/users/logout" className="navbar-text">
-          <input type="submit" value="logout" />
+          <input className="navbar-text" type="submit" value="logout" />
         </form>
       );
     }

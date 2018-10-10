@@ -11,17 +11,19 @@ class Home extends React.Component {
       user = this.props.currentUser.login;
       bottom = 'invisible';
       logo = 'invisible order-1';
-      welcome = 'logo mx-auto text-center shadow order-0';
+      welcome = 'logo mx-auto text-center order-0';
     }
     return (
       <Default bodyclasslist="homebg" currentUser={user}>
         <div className="container d-flex align-items-center justify-content-center h-100">
-          <div className="container-fluid d-flex flex-wrap">
+          <div className="container-fluid d-flex flex-column">
             <h1 className={logo}>
               EAT <br /> WHAT?
             </h1>
             <h1 className={welcome}>
-              Hey {user}! <br />
+              <span className="shadow">
+                Hey {user}! <br />
+              </span>
               <a href="#" className="btn btn-lg btn-light">
                 LETS GO
               </a>
