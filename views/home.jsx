@@ -24,7 +24,7 @@ class Home extends React.Component {
               <span className="shadow">
                 Hey {user}! <br />
               </span>
-              <a href="#" className="btn btn-lg btn-light">
+              <a href="/food/start" className="btn btn-lg btn-light">
                 LETS GO
               </a>
             </h1>
