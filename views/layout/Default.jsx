@@ -3,12 +3,17 @@ const React = require('react');
 class Default extends React.Component {
   render() {
     let logout;
+    let bodyclass = 'defaultbg';
     if (this.props.currentUser) {
       logout = (
         <form method="post" action="/users/logout">
           <input className="nav-link text-light p-0" type="submit" value=" | logout" />
         </form>
       );
+    }
+
+    if (this.props.bodyclasslist) {
+      bodyclass = this.props.bodyclasslist;
     }
     return (
       <html>
@@ -22,9 +27,15 @@ class Default extends React.Component {
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossOrigin="anonymous"
           />
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+            crossorigin="anonymous"
+          />
           <link rel="stylesheet" href="/stylesheets/main.css" />
         </head>
-        <body className={this.props.bodyclasslist}>
+        <body className={bodyclass}>
           <header>
             <nav className="navbar navbar-dark fixed-top">
               <a className="navbar-brand logo" href="/">

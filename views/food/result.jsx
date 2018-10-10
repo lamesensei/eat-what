@@ -7,14 +7,14 @@ class Result extends React.Component {
       <Default currentUser={this.props.currentUser.login}>
         <div className="container mx-auto">
           <div className="row mt-2">
-            <div class="alert alert-success w-100 text-center" role="alert">
-              <h4 class="alert-heading">DSEN RECOMMENDS</h4>
-              <p>{this.props.result.name}</p>
-              <p>{this.props.result.description}</p>
-              <p>{this.props.result.location}</p>
+            <div className="alert alert-success w-100 text-center" role="alert">
+              <h4 className="alert-heading">{this.props.result.name}</h4>
+
+              <p>@ {this.props.result.location}</p>
+              <p>"{this.props.result.description}"</p>
             </div>
-            <a href="/food/solo" className="btn btn-block btn-secondary">
-              REFRESH
+            <a href="/food/solo" className="btn btn-lg btn-info text-light mx-auto">
+              <i className="fas fa-redo" />
             </a>
           </div>
         </div>

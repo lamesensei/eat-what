@@ -12,7 +12,7 @@ class Login extends React.Component {
         <div className="container">
           <form className="" action="/users/login" method="post">
             <div className="form-group">
-              <label>Username</label>
+              <label>Login</label>
               <input type="text" className="form-control" name="login" required />
             </div>
             <div className="form-group">

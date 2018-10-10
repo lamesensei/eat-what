@@ -14,17 +14,17 @@ class Signup extends React.Component {
                 type="text"
                 className="form-control"
                 name="name"
-                placeholder="John Doe"
+                placeholder="Suparman Bin Batman"
                 required
               />
             </div>
             <div className="form-group">
-              <label>Username</label>
+              <label>Login</label>
               <input
                 type="text"
                 className="form-control"
                 name="login"
-                placeholder="johndoe91"
+                placeholder="suparbat91"
                 required
               />
             </div>

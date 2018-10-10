@@ -14,6 +14,7 @@ body {
 input[type='submit'] {
   -webkit-appearance: none;
   border: none;
+  background: transparent;
 }
 
 .logo {
@@ -27,7 +28,12 @@ input[type='submit'] {
 }
 
 .homebg {
-  background: url('/media/home.jpg') center center fixed no-repeat;
+  background: url('/media/landing.jpg') center center fixed no-repeat;
+  background-size: cover;
+}
+
+.defaultbg {
+  background: url('/media/background.jpg') center center fixed no-repeat;
   background-size: cover;
 }
 

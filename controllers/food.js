@@ -14,7 +14,6 @@ module.exports = (db, user) => {
   };
 
   const solo = (req, res) => {
-    console.log('hi');
     if (user.checkLogin(req.cookies.loggedin)) {
       const params = getLocation();
       db.food.solo(params, (err, result) => {
