@@ -5,8 +5,8 @@ class Default extends React.Component {
     let logout;
     if (this.props.currentUser) {
       logout = (
-        <form method="post" action="/users/logout" className="navbar-text">
-          <input className="navbar-text" type="submit" value="logout" />
+        <form method="post" action="/users/logout">
+          <input className="nav-link p-0 btn btn-link" type="submit" value=" /logout" />
         </form>
       );
     }
@@ -30,10 +30,12 @@ class Default extends React.Component {
               <a className="navbar-brand logo" href="/">
                 EAT WHAT?
               </a>
-              <a className="navbar-text" href="#">
+              <div className="nav nav-justified">
+                <a href="#" className="nav-link text-muted p-0">
+                  <u>{this.props.currentUser}</u>
+                </a>
                 {logout}
-                <u>{this.props.currentUser}</u>
-              </a>
+              </div>
             </nav>
           </header>
           <div className="container-fluid h-100">{this.props.children}</div>
