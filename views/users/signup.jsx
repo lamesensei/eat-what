@@ -33,7 +33,7 @@ class Signup extends React.Component {
               <input type="password" className="form-control" name="password" required />
             </div>
             <button type="submit" className="btn btn-primary mb-2">
-              Submit
+              <i class="fas fa-check" />
             </button>
           </form>
         </div>

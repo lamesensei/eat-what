@@ -5,18 +5,29 @@ module.exports = (db, user) => {
     return Math.floor(Math.random() * (max - min)) + min; //
   }
 
-  const getLocation = () => 1;
+  const getLocation = (location) => {
+    db.food.getLocation(location, (err, result) => {
+      if (err) console.error(err);
+      else if (result.rowCount >= 1) {
+        console.log(result.rows);
+        return result.rows[0];
+      }
+      return 'Could not find location.';
+    });
+  };
 
-  const start = (req, res) => {
+  const eat = (req, res) => {
     if (user.checkLogin(req.cookies.loggedin)) {
-      res.render('food/start', { currentUser: req.cookies.loggedin });
+      res.render('food/eat', { currentUser: req.cookies.loggedin });
     }
   };
 
   const solo = (req, res) => {
+    const location = {
+      id: 1,
+    };
     if (user.checkLogin(req.cookies.loggedin)) {
-      const params = getLocation();
-      db.food.solo(params, (err, result) => {
+      db.food.solo(location.id, (err, result) => {
         if (err) console.error(err);
         else if (result.rowCount >= 1) {
           const dice = getRandomInt(0, result.rows.length);
@@ -24,15 +35,23 @@ module.exports = (db, user) => {
           res.render('food/result', {
             currentUser: req.cookies.loggedin,
             result: randomResult,
+            location: 'GA',
           });
         }
       });
     }
   };
 
+  const curate = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      res.render('food/curate');
+    }
+  };
+
   return {
-    start,
+    eat,
     solo,
     getLocation,
+    curate,
   };
 };

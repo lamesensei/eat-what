@@ -10,6 +10,7 @@ module.exports = (app, db) => {
   app.post('/users/logout', user.logout);
 
   food = food(db, user);
-  app.get('/food/start', food.start);
+  app.get('/food/eat', food.eat);
   app.get('/food/solo', food.solo);
+  app.get('/food/curate', food.curate);
 };

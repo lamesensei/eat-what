@@ -8,6 +8,16 @@ module.exports = (pool) => {
     WHERE current_location_id=($1)`;
     const values = [params];
 
+    pool.query(statement, values, (err, result) => callback(err, result));
+  };
+
+  const getLocation = (params, callback) => {
+    const statement = `SELECT
+    * 
+    FROM location 
+    WHERE id = ($1)`;
+    const values = [params];
+
     pool.query(statement, values, (err, result) => {
       callback(err, result);
     });
@@ -15,5 +25,6 @@ module.exports = (pool) => {
 
   return {
     solo,
+    getLocation,
   };
 };

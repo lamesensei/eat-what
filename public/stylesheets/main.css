@@ -17,6 +17,10 @@ input[type='submit'] {
   background: transparent;
 }
 
+label {
+  font-weight: bold;
+}
+
 .logo {
   font-family: 'Chelsea Market', cursive;
   color: white;

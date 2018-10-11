@@ -9,8 +9,8 @@ class Result extends React.Component {
           <div className="row mt-2">
             <div className="alert alert-success w-100 text-center" role="alert">
               <h4 className="alert-heading">{this.props.result.name}</h4>
-
               <p>@ {this.props.result.location}</p>
+              <hr />
               <p>"{this.props.result.description}"</p>
             </div>
             <a href="/food/solo" className="btn btn-lg btn-info text-light mx-auto">

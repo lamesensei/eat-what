@@ -7,7 +7,7 @@ class Home extends React.Component {
     let bottom = 'navbar fixed-bottom justify-content-center';
     let logo = 'logo display-1 mx-auto text-center shadow';
     let welcome = 'invisible';
-    if (this.props.currentUser !== null) {
+    if (this.props.currentUser) {
       user = this.props.currentUser.login;
       bottom = 'invisible';
       logo = 'invisible order-1';
@@ -24,8 +24,11 @@ class Home extends React.Component {
               <span className="shadow">
                 Hey {user}! <br />
               </span>
-              <a href="/food/start" className="btn btn-lg btn-light">
-                LETS GO
+              <a href="/food/eat" className="btn btn-lg btn-light mr-2">
+                EAT
+              </a>
+              <a href="/food/curate" className="btn btn-lg btn-light ml-2">
+                CURATE
               </a>
             </h1>
           </div>

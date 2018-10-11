@@ -1,14 +1,14 @@
 const React = require('react');
 const Default = require('../layout/Default');
 
-class Start extends React.Component {
+class Eat extends React.Component {
   render() {
     return (
       <Default currentUser={this.props.currentUser.login}>
         <div className="container mx-auto">
           <div className="row mt-2">
-            <div class="alert alert-info w-100 text-center" role="alert">
-              <h4 class="alert-heading">CHOOSE!</h4>
+            <div className="alert alert-info w-100 text-center" role="alert">
+              <h4 className="alert-heading">{this.props.location}</h4>
             </div>
             <div className="textoverlaycontainer">
               <a href="/food/solo">
@@ -31,4 +31,4 @@ class Start extends React.Component {
   }
 }
 
-module.exports = Start;
+module.exports = Eat;
