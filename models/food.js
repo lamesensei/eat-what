@@ -31,9 +31,22 @@ module.exports = (pool) => {
     });
   };
 
+  const create = (params, callback) => {
+    const statement = `INSERT
+    INTO food (name, description, location_id, author_id) 
+    VALUES ($1,$2,$3,$4) RETURNING name`;
+
+    const values = [params.name, params.description, params.location, params.author];
+
+    pool.query(statement, values, (err, result) => {
+      callback(err, result);
+    });
+  };
+
   return {
     solo,
     getCurrentLocation,
     getLocations,
+    create,
   };
 };

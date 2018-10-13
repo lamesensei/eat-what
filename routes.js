@@ -11,6 +11,8 @@ module.exports = (app, db) => {
 
   food = food(db, user);
   app.get('/food/eat', food.eat);
+  // app.get('/food/curate', food.curate);
   app.get('/food/solo', food.solo);
   app.get('/food/add', food.addPlace);
+  app.post('/food/new', food.create);
 };

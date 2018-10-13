@@ -5,12 +5,14 @@ class AddPlace extends React.Component {
   render() {
     console.log(this.props.location);
     const locationList = this.props.location.map(item => (
-      <option key={item.id}>{item.name}</option>
+      <option key={item.id} value={item.id}>
+        {item.name}
+      </option>
     ));
     return (
-      <Default>
+      <Default currentUser={this.props.currentUser.login}>
         <div className="container">
-          <form className="" action="/food/curate" method="post">
+          <form className="" action="/food/new" method="post">
             <div className="form-group">
               <label>Name</label>
               <input type="text" className="form-control" name="name" required />

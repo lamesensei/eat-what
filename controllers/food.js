@@ -47,9 +47,30 @@ module.exports = (db, user) => {
       db.food.getLocations((err, result) => {
         if (err) console.error(err);
         else if (result.rowCount >= 1) {
-          return res.render('food/addplace', { location: result.rows });
+          return res.render('food/addplace', {
+            currentUser: req.cookies.loggedin,
+            location: result.rows,
+          });
         }
-        return res.render('food/addplace');
+        return res.render('food/addplace', { currentUser: req.cookies.loggedin });
+      });
+    }
+  };
+
+  const create = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      const params = {
+        name: req.body.name,
+        description: req.body.description,
+        location: req.body.location,
+        author: req.cookies.loggedin.id,
+      };
+
+      db.food.create(params, (err, result) => {
+        if (err) console.error(err);
+        else if (result.rowCount >= 1) {
+          res.send(`${result.rows[0].name} added.`);
+        }
       });
     }
   };
@@ -59,5 +80,6 @@ module.exports = (db, user) => {
     solo,
     getCurrentLocation,
     addPlace,
+    create,
   };
 };
