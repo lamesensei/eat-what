@@ -20,7 +20,7 @@ class Login extends React.Component {
               <input type="password" className="form-control" name="password" required />
             </div>
             <button type="submit" className="btn btn-primary mb-2">
-              <i class="fas fa-check" />
+              <i className="fas fa-check" />
             </button>
             <div className={error} role="alert">
               Wrong details entered, try again!

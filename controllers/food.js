@@ -1,11 +1,11 @@
 module.exports = (db, user) => {
   function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //
+    const minC = Math.ceil(min);
+    const maxF = Math.floor(max);
+    return Math.floor(Math.random() * (maxF - minC)) + minC; //
   }
 
-  const getLocation = (location) => {
+  const getCurrentLocation = (location) => {
     db.food.getLocation(location, (err, result) => {
       if (err) console.error(err);
       else if (result.rowCount >= 1) {
@@ -42,16 +42,22 @@ module.exports = (db, user) => {
     }
   };
 
-  const curate = (req, res) => {
+  const addPlace = (req, res) => {
     if (user.checkLogin(req.cookies.loggedin)) {
-      res.render('food/curate');
+      db.food.getLocations((err, result) => {
+        if (err) console.error(err);
+        else if (result.rowCount >= 1) {
+          return res.render('food/addplace', { location: result.rows });
+        }
+        return res.render('food/addplace');
+      });
     }
   };
 
   return {
     eat,
     solo,
-    getLocation,
-    curate,
+    getCurrentLocation,
+    addPlace,
   };
 };

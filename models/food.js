@@ -11,7 +11,7 @@ module.exports = (pool) => {
     pool.query(statement, values, (err, result) => callback(err, result));
   };
 
-  const getLocation = (params, callback) => {
+  const getCurrentLocation = (params, callback) => {
     const statement = `SELECT
     * 
     FROM location 
@@ -23,8 +23,17 @@ module.exports = (pool) => {
     });
   };
 
+  const getLocations = (callback) => {
+    const statement = 'SELECT * FROM location';
+
+    pool.query(statement, null, (err, result) => {
+      callback(err, result);
+    });
+  };
+
   return {
     solo,
-    getLocation,
+    getCurrentLocation,
+    getLocations,
   };
 };
