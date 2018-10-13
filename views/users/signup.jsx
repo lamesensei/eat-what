@@ -36,6 +36,7 @@ class Signup extends React.Component {
               <i className="fas fa-check" />
             </button>
           </form>
+          <a href="login">Have an account? Login here.</a>
         </div>
       </Default>
     );

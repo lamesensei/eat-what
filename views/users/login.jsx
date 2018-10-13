@@ -26,6 +26,7 @@ class Login extends React.Component {
               Wrong details entered, try again!
             </div>
           </form>
+          <a href="new">No account? Register here.</a>
         </div>
       </Default>
     );
