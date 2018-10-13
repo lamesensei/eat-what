@@ -32,6 +32,11 @@ app.get('/', (req, res) => {
   res.render('home', { currentUser });
 });
 
+app.get('*', (req, res) => {
+  const errorMsg = `${req.path} was not found.`;
+  res.status(404).send(errorMsg);
+});
+
 server.on('close', () => {
   console.log('Server closing');
   db.pool.end(console.log('Pool closed.'));
