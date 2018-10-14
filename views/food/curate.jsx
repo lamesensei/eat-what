@@ -1,7 +1,7 @@
 const React = require('react');
 const Default = require('../layout/Default');
 
-class Eat extends React.Component {
+class Curate extends React.Component {
   render() {
     return (
       <Default currentUser={this.props.currentUser.login}>
@@ -29,4 +29,4 @@ class Eat extends React.Component {
   }
 }
 
-module.exports = Eat;
+module.exports = Curate;

@@ -43,10 +43,20 @@ module.exports = (pool) => {
     });
   };
 
+  const getPlaces = (params, callback) => {
+    const statement = 'SELECT * FROM food WHERE author_id = ($1)';
+    const values = [params];
+
+    pool.query(statement, values, (err, result) => {
+      callback(err, result);
+    });
+  };
+
   return {
     solo,
     getCurrentLocation,
     getLocations,
     create,
+    getPlaces,
   };
 };

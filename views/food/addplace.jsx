@@ -3,7 +3,6 @@ const Default = require('../layout/Default');
 
 class AddPlace extends React.Component {
   render() {
-    console.log(this.props.location);
     const locationList = this.props.location.map(item => (
       <option key={item.id} value={item.id}>
         {item.name}
@@ -12,7 +11,7 @@ class AddPlace extends React.Component {
     return (
       <Default currentUser={this.props.currentUser.login}>
         <div className="container">
-          <form className="" action="/food/new" method="post">
+          <form className="" action="/food" method="post">
             <div className="form-group">
               <label>Name</label>
               <input type="text" className="form-control" name="name" required />

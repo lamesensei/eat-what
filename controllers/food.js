@@ -81,6 +81,20 @@ module.exports = (db, user) => {
     }
   };
 
+  const editList = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      db.food.getPlaces(req.cookies.loggedin.id, (err, result) => {
+        if (err) console.error(err);
+        else {
+          res.render('food/editplace', {
+            currentUser: req.cookies.loggedin,
+            places: result.rows,
+          });
+        }
+      });
+    }
+  };
+
   return {
     eat,
     solo,
@@ -88,5 +102,6 @@ module.exports = (db, user) => {
     addPlace,
     create,
     curate,
+    editList,
   };
 };
