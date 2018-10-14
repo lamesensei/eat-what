@@ -75,11 +75,18 @@ module.exports = (db, user) => {
     }
   };
 
+  const curate = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      res.render('food/curate', { currentUser: req.cookies.loggedin });
+    }
+  };
+
   return {
     eat,
     solo,
     getCurrentLocation,
     addPlace,
     create,
+    curate,
   };
 };
