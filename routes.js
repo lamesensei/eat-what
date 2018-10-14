@@ -17,4 +17,5 @@ module.exports = (app, db) => {
   app.get('/food/edit', food.editList);
   app.get('/food/:id/edit', food.editForm);
   app.post('/food', food.create);
+  app.put('/food/:id/edit', food.edit);
 };

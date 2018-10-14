@@ -34,7 +34,7 @@ module.exports = (pool) => {
   const create = (params, callback) => {
     const statement = `INSERT
     INTO food (name, description, location_id, author_id) 
-    VALUES ($1,$2,$3,$4) RETURNING name`;
+    VALUES ($1,$2,$3,$4) RETURNING *`;
 
     const values = [params.name, params.description, params.location, params.author];
 
@@ -52,11 +52,21 @@ module.exports = (pool) => {
     });
   };
 
-  getSinglePlace = (params, callback) => {
+  const getSinglePlace = (params, callback) => {
     const statement = 'SELECT * FROM food WHERE id = ($1)';
     const values = [params];
 
     pool.query(statement, values, (err, result) => {
+      callback(err, result);
+    });
+  };
+
+  const edit = (params, callback) => {
+    const statement = 'UPDATE food SET (name,description,location_id) = ($1,$2,$3) WHERE id = ($4) RETURNING *';
+    const values = [params.name, params.description, params.location, params.id];
+
+    pool.query(statement, values, (err, result) => {
+      console.log(result.rows[0]);
       callback(err, result);
     });
   };
@@ -68,5 +78,6 @@ module.exports = (pool) => {
     create,
     getPlaces,
     getSinglePlace,
+    edit,
   };
 };

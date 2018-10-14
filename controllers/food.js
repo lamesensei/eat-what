@@ -69,7 +69,11 @@ module.exports = (db, user) => {
       db.food.create(params, (err, result) => {
         if (err) console.error(err);
         else if (result.rowCount >= 1) {
-          res.send(`${result.rows[0].name} added.`);
+          res.render('food/curate', {
+            currentUser: req.cookies.loggedin,
+            success: result.rows[0],
+            action: 'added',
+          });
         }
       });
     }
@@ -97,7 +101,6 @@ module.exports = (db, user) => {
 
   const editForm = (req, res) => {
     if (user.checkLogin(req.cookies.loggedin)) {
-      console.log(req.query);
       db.food.getSinglePlace(req.params.id, (placeErr, placeResult) => {
         if (placeErr) console.error(placeErr);
         else {
@@ -113,6 +116,27 @@ module.exports = (db, user) => {
     }
   };
 
+  const edit = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      const params = {
+        id: req.params.id,
+        name: req.body.name,
+        description: req.body.description,
+        location: req.body.location,
+      };
+      db.food.edit(params, (err, result) => {
+        if (err) console.err;
+        else if (result.rowCount >= 1) {
+          res.render('food/curate', {
+            currentUser: req.cookies.loggedin,
+            success: result.rows[0],
+            action: 'edited.',
+          });
+        }
+      });
+    }
+  };
+
   return {
     eat,
     solo,
@@ -122,5 +146,6 @@ module.exports = (db, user) => {
     curate,
     editList,
     editForm,
+    edit,
   };
 };
