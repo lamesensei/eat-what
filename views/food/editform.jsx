@@ -3,7 +3,6 @@ const Default = require('../layout/Default');
 
 class EditForm extends React.Component {
   render() {
-    console.log(this.props.place);
     const locationList = this.props.location.map((item) => {
       if (item.id === this.props.place.location_id) {
         return (

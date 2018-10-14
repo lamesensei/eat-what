@@ -8,6 +8,9 @@ class Curate extends React.Component {
       sucessAlert = (
         <div className="alert alert-success w-100 text-center" role="alert">
           {this.props.success.name} was {this.props.action}
+          <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
       );
     }

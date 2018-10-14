@@ -29,6 +29,9 @@ class Login extends React.Component {
             </button>
             <div className={error} role="alert">
               Wrong details entered, try again!
+              <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
           </form>
           <a href="new">No account? Register here.</a>
