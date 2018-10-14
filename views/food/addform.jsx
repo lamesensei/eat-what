@@ -11,6 +11,11 @@ class AddForm extends React.Component {
     return (
       <Default currentUser={this.props.currentUser.login}>
         <div className="container">
+          <div className="row mt-2">
+            <div className="alert alert-info w-100 text-center" role="alert">
+              <h4 className="alert-heading">Add New Place</h4>
+            </div>
+          </div>
           <form className="" action="/food" method="post">
             <div className="form-group">
               <label>Name</label>

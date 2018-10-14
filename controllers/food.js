@@ -47,7 +47,7 @@ module.exports = (db, user) => {
       db.food.getLocations((err, result) => {
         if (err) console.error(err);
         else if (result.rowCount >= 1) {
-          return res.render('food/addplace', {
+          return res.render('food/addform', {
             currentUser: req.cookies.loggedin,
             location: result.rows,
           });
