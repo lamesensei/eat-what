@@ -125,7 +125,7 @@ module.exports = (db, user) => {
         location: req.body.location,
       };
       db.food.edit(params, (err, result) => {
-        if (err) console.err;
+        if (err) console.error(err);
         else if (result.rowCount >= 1) {
           res.render('food/curate', {
             currentUser: req.cookies.loggedin,
@@ -152,6 +152,21 @@ module.exports = (db, user) => {
     }
   };
 
+  const fave = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      const params = {
+        userid: req.cookies.loggedin.id,
+        foodid: req.params.id,
+      };
+      db.food.fave(params, (err, result) => {
+        if (err) console.error(err);
+        else if (result.rowCount >= 1) {
+          res.send(result.rows.toString());
+        }
+      });
+    }
+  };
+
   return {
     eat,
     solo,
@@ -163,5 +178,6 @@ module.exports = (db, user) => {
     editForm,
     edit,
     remove,
+    fave,
   };
 };

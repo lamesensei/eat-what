@@ -79,6 +79,18 @@ module.exports = (pool) => {
     });
   };
 
+  const fave = (params, callback) => {
+    const statement = `INSERT
+    INTO fave (user_id, food_id) 
+    VALUES ($1,$2) RETURNING *`;
+
+    const values = [params.userid, params.foodid];
+
+    pool.query(statement, values, (err, result) => {
+      callback(err, result);
+    });
+  };
+
   return {
     solo,
     getCurrentLocation,
@@ -88,5 +100,6 @@ module.exports = (pool) => {
     getPlaceById,
     edit,
     remove,
+    fave,
   };
 };

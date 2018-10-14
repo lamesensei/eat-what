@@ -21,7 +21,12 @@ class EditList extends React.Component {
     }
     const listItems = this.props.places.map(item => (
       <div class="input-group mb-3">
-        <input type="text" class="form-control" defaultValue={item.name} disabled />
+        <input
+          type="text"
+          class="form-control text-center bg-success text-white font-weight-bold"
+          defaultValue={item.name}
+          disabled
+        />
         <div class="input-group-append">
           <a className="btn btn-warning" href={`${item.id}/edit`}>
             <strong>EDIT</strong>
