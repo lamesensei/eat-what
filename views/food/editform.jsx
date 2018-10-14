@@ -32,7 +32,7 @@ class EditForm extends React.Component {
                 type="text"
                 className="form-control"
                 name="name"
-                value={this.props.place.name}
+                defaultValue={this.props.place.name}
                 required
               />
             </div>
@@ -48,7 +48,7 @@ class EditForm extends React.Component {
                 type="text"
                 className="form-control"
                 name="description"
-                value={this.props.place.description}
+                defaultValue={this.props.place.description}
                 required
               />
             </div>

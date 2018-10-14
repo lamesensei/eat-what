@@ -20,9 +20,19 @@ class EditList extends React.Component {
       );
     }
     const listItems = this.props.places.map(item => (
-      <a className="btn btn-success btn-block" href={`${item.id}/edit`} role="button">
-        {item.name}
-      </a>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" defaultValue={item.name} disabled />
+        <div class="input-group-append">
+          <a className="btn btn-warning" href={`${item.id}/edit`}>
+            <strong>EDIT</strong>
+          </a>
+          <form action={`/food/${item.id}/fave`} method="post">
+            <button type="submit" className="btn-danger btn">
+              <i className="fas fa-heart" />
+            </button>
+          </form>
+        </div>
+      </div>
     ));
     return (
       <Default currentUser={this.props.currentUser.login}>

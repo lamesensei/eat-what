@@ -10,7 +10,7 @@ class Eat extends React.Component {
             <div className="alert alert-info w-100 text-center" role="alert">
               <h4 className="alert-heading">{this.props.location}</h4>
             </div>
-            <div className="textoverlaycontainer">
+            <div className="textoverlaycontainer w-100">
               <a href="/food/solo">
                 <img src="/media/solo.jpg" alt="SOLO" className="img-fluid rounded" />
                 <p className="textoverlaycenter display-3 logo shadow">SOLO</p>
@@ -18,7 +18,7 @@ class Eat extends React.Component {
             </div>
           </div>
           <div className="row mt-3">
-            <div className="textoverlaycontainer">
+            <div className="textoverlaycontainer w-100">
               <a href="/food/friends">
                 <img src="/media/friends.jpg" alt="FRIENDS" className="img-fluid rounded" />
                 <p className="textoverlaycenter display-3 logo shadow">FRIENDS</p>

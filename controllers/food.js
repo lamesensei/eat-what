@@ -87,7 +87,7 @@ module.exports = (db, user) => {
 
   const editList = (req, res) => {
     if (user.checkLogin(req.cookies.loggedin)) {
-      db.food.getPlaces(req.cookies.loggedin.id, (err, result) => {
+      db.food.getPlacesByAuthor(req.cookies.loggedin.id, (err, result) => {
         if (err) console.error(err);
         else {
           res.render('food/editlist', {
@@ -101,7 +101,7 @@ module.exports = (db, user) => {
 
   const editForm = (req, res) => {
     if (user.checkLogin(req.cookies.loggedin)) {
-      db.food.getSinglePlace(req.params.id, (placeErr, placeResult) => {
+      db.food.getPlaceById(req.params.id, (placeErr, placeResult) => {
         if (placeErr) console.error(placeErr);
         else {
           db.food.getLocations((locationErr, locationResult) => {

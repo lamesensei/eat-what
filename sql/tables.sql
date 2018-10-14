@@ -37,3 +37,10 @@ CREATE TABLE IF NOT EXISTS foodcat (
   food_id INTEGER,
   cat_id INTEGER
 );
+
+CREATE TABLE IF NOT EXISTS fave (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER,
+  food_id INTEGER,
+  UNIQUE(user_id,food_id)
+);

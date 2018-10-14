@@ -43,7 +43,7 @@ module.exports = (pool) => {
     });
   };
 
-  const getPlaces = (params, callback) => {
+  const getPlacesByAuthor = (params, callback) => {
     const statement = 'SELECT * FROM food WHERE author_id = ($1)';
     const values = [params];
 
@@ -52,7 +52,7 @@ module.exports = (pool) => {
     });
   };
 
-  const getSinglePlace = (params, callback) => {
+  const getPlaceById = (params, callback) => {
     const statement = 'SELECT * FROM food WHERE id = ($1)';
     const values = [params];
 
@@ -84,8 +84,8 @@ module.exports = (pool) => {
     getCurrentLocation,
     getLocations,
     create,
-    getPlaces,
-    getSinglePlace,
+    getPlacesByAuthor,
+    getPlaceById,
     edit,
     remove,
   };
