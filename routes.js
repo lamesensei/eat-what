@@ -13,7 +13,8 @@ module.exports = (app, db) => {
   app.get('/food/eat', food.eat);
   app.get('/food/curate', food.curate);
   app.get('/food/solo', food.solo);
-  app.get('/food/add', food.addPlace);
-  app.get('/food/:id', food.editList);
+  app.get('/food/add', food.addForm);
+  app.get('/food/edit', food.editList);
+  app.get('/food/:id/edit', food.editForm);
   app.post('/food', food.create);
 };

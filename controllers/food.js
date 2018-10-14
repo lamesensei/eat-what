@@ -42,7 +42,7 @@ module.exports = (db, user) => {
     }
   };
 
-  const addPlace = (req, res) => {
+  const addForm = (req, res) => {
     if (user.checkLogin(req.cookies.loggedin)) {
       db.food.getLocations((err, result) => {
         if (err) console.error(err);
@@ -52,7 +52,7 @@ module.exports = (db, user) => {
             location: result.rows,
           });
         }
-        return res.render('food/addplace', { currentUser: req.cookies.loggedin });
+        return res.render('food/addform', { currentUser: req.cookies.loggedin });
       });
     }
   };
@@ -86,9 +86,27 @@ module.exports = (db, user) => {
       db.food.getPlaces(req.cookies.loggedin.id, (err, result) => {
         if (err) console.error(err);
         else {
-          res.render('food/editplace', {
+          res.render('food/editlist', {
             currentUser: req.cookies.loggedin,
             places: result.rows,
+          });
+        }
+      });
+    }
+  };
+
+  const editForm = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      console.log(req.query);
+      db.food.getSinglePlace(req.params.id, (placeErr, placeResult) => {
+        if (placeErr) console.error(placeErr);
+        else {
+          db.food.getLocations((locationErr, locationResult) => {
+            res.render('food/editform', {
+              currentUser: req.cookies.loggedin,
+              place: placeResult.rows[0],
+              location: locationResult.rows,
+            });
           });
         }
       });
@@ -99,9 +117,10 @@ module.exports = (db, user) => {
     eat,
     solo,
     getCurrentLocation,
-    addPlace,
+    addForm,
     create,
     curate,
     editList,
+    editForm,
   };
 };

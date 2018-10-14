@@ -1,7 +1,7 @@
 const React = require('react');
 const Default = require('../layout/Default');
 
-class AddPlace extends React.Component {
+class AddForm extends React.Component {
   render() {
     const locationList = this.props.location.map(item => (
       <option key={item.id} value={item.id}>
@@ -36,4 +36,4 @@ class AddPlace extends React.Component {
   }
 }
 
-module.exports = AddPlace;
+module.exports = AddForm;

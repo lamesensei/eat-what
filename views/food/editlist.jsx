@@ -10,7 +10,7 @@ class EditList extends React.Component {
           <div className="alert alert-danger w-100 text-center" role="alert">
             <h4 className="alert-heading">You have no places.</h4>
             <p>
-              Add one{' '}
+              Add one
               <a href="add" className="font-weight-bold">
                 here.
               </a>
@@ -20,7 +20,7 @@ class EditList extends React.Component {
       );
     }
     const listItems = this.props.places.map(item => (
-      <a className="btn btn-success btn-block" href={`edit/${item.id}`} role="button">
+      <a className="btn btn-success btn-block" href={`${item.id}/edit`} role="button">
         {item.name}
       </a>
     ));
