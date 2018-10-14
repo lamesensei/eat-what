@@ -137,6 +137,21 @@ module.exports = (db, user) => {
     }
   };
 
+  const remove = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      db.food.remove(req.params.id, (err, result) => {
+        if (err) console.error(err);
+        else if (result.rowCount >= 1) {
+          res.render('food/curate', {
+            currentUser: req.cookies.loggedin,
+            success: result.rows[0],
+            action: 'deleted.',
+          });
+        }
+      });
+    }
+  };
+
   return {
     eat,
     solo,
@@ -147,5 +162,6 @@ module.exports = (db, user) => {
     editList,
     editForm,
     edit,
+    remove,
   };
 };

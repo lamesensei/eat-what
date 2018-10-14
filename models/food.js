@@ -66,7 +66,15 @@ module.exports = (pool) => {
     const values = [params.name, params.description, params.location, params.id];
 
     pool.query(statement, values, (err, result) => {
-      console.log(result.rows[0]);
+      callback(err, result);
+    });
+  };
+
+  const remove = (params, callback) => {
+    const statement = 'DELETE FROM food WHERE id = ($1) RETURNING *';
+    const values = [params];
+
+    pool.query(statement, values, (err, result) => {
       callback(err, result);
     });
   };
@@ -79,5 +87,6 @@ module.exports = (pool) => {
     getPlaces,
     getSinglePlace,
     edit,
+    remove,
   };
 };

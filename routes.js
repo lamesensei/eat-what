@@ -18,4 +18,5 @@ module.exports = (app, db) => {
   app.get('/food/:id/edit', food.editForm);
   app.post('/food', food.create);
   app.put('/food/:id/edit', food.edit);
+  app.delete('/food/:id/delete', food.remove);
 };

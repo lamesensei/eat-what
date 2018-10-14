@@ -56,6 +56,11 @@ class EditForm extends React.Component {
               <i className="fas fa-check" />
             </button>
           </form>
+          <form action={`/food/${this.props.place.id}/delete?_method=DELETE`} method="post">
+            <button type="submit" className="btn btn-danger">
+              Delete
+            </button>
+          </form>
         </div>
       </Default>
     );
