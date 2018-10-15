@@ -2,12 +2,15 @@ const express = require('express');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const reactEngine = require('express-react-views').createEngine();
+const fileUpload = require('express-fileupload');
+
 const db = require('./db');
 const routes = require('./routes');
 
 const PORT = process.env.PORT || 80;
 const app = express();
 
+app.use(fileUpload());
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(
@@ -16,7 +19,6 @@ app.use(
   }),
 );
 app.use(express.static(`${__dirname}/public/`));
-
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'jsx');
 app.engine('jsx', reactEngine);

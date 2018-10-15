@@ -16,7 +16,7 @@ class AddForm extends React.Component {
               <h4 className="alert-heading">Add New Place</h4>
             </div>
           </div>
-          <form className="" action="/food" method="post">
+          <form className="" action="/food" method="post" encType="multipart/form-data">
             <div className="form-group">
               <label>Name</label>
               <input type="text" className="form-control" name="name" required />
@@ -26,6 +26,21 @@ class AddForm extends React.Component {
               <select className="form-control" name="location">
                 {locationList}
               </select>
+            </div>
+            <div className="form-group">
+              <label>Add Photo</label>
+              <div class="custom-file">
+                <input
+                  type="file"
+                  class="custom-file-input"
+                  id="validatedCustomFile"
+                  name="photo"
+                  required
+                />
+                <label class="custom-file-label" for="validatedCustomFile">
+                  Choose File...
+                </label>
+              </div>
             </div>
             <div className="form-group">
               <label>Description</label>

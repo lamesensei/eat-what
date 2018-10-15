@@ -59,22 +59,26 @@ module.exports = (db, user) => {
 
   const create = (req, res) => {
     if (user.checkLogin(req.cookies.loggedin)) {
-      const params = {
-        name: req.body.name,
-        description: req.body.description,
-        location: req.body.location,
-        author: req.cookies.loggedin.id,
-      };
+      let photo = req.files.photo;
+      photo.mv(`public/uploads/${photo.name}`, (uploadErr) => {
+        const params = {
+          name: req.body.name,
+          description: req.body.description,
+          location: req.body.location,
+          image: `/uploads/${photo.name}`,
+          author: req.cookies.loggedin.id,
+        };
 
-      db.food.create(params, (err, result) => {
-        if (err) console.error(err);
-        else if (result.rowCount >= 1) {
-          res.render('food/curate', {
-            currentUser: req.cookies.loggedin,
-            success: result.rows[0],
-            action: 'added',
-          });
-        }
+        db.food.create(params, (err, result) => {
+          if (err) console.error(err);
+          else if (result.rowCount >= 1) {
+            res.render('food/curate', {
+              currentUser: req.cookies.loggedin,
+              success: result.rows[0],
+              action: 'added',
+            });
+          }
+        });
       });
     }
   };

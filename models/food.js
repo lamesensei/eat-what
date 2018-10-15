@@ -33,10 +33,10 @@ module.exports = (pool) => {
 
   const create = (params, callback) => {
     const statement = `INSERT
-    INTO food (name, description, location_id, author_id) 
-    VALUES ($1,$2,$3,$4) RETURNING *`;
+    INTO food (name, description, location_id, author_id, image) 
+    VALUES ($1,$2,$3,$4,$5) RETURNING *`;
 
-    const values = [params.name, params.description, params.location, params.author];
+    const values = [params.name, params.description, params.location, params.author, params.image];
 
     pool.query(statement, values, (err, result) => {
       callback(err, result);

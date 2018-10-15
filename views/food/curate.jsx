@@ -28,7 +28,7 @@ class Curate extends React.Component {
               Add New Place
             </a>
             <a className="btn btn-info btn-block" href="/food/fave" role="button">
-              Favourite Place
+              Favourite Place(s)
             </a>
             <a className="btn btn-warning btn-block" href="/food/edit" role="button">
               Edit Place(s)
