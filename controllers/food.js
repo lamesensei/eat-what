@@ -165,7 +165,7 @@ module.exports = (db, user) => {
       db.food.fave(params, (err, result) => {
         if (err) console.error(err);
         else if (result.rowCount >= 1) {
-          res.send(result.rows.toString());
+          res.redirect('/food/fave');
         }
       });
     }
@@ -176,7 +176,7 @@ module.exports = (db, user) => {
       db.food.faveList(req.cookies.loggedin.id, (err, result) => {
         if (err) console.error(err);
         else if (result.rowCount >= 1) {
-          res.render('food/favelist', { currentUser: req.cookies.loggedin });
+          return res.render('food/favelist', { currentUser: req.cookies.loggedin });
         }
       });
     }
@@ -198,10 +198,12 @@ module.exports = (db, user) => {
       db.food.list((err, result) => {
         if (err) console.error(err);
         else if (result.rowCount >= 1) {
-          res.render('food/list', {
+          return res.render('food/list', {
             currentUser: req.cookies.loggedin,
+            places: result.rows,
           });
         }
+        return res.redirect('food/fave');
       });
     }
   };

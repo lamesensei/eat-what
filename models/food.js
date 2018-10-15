@@ -118,8 +118,7 @@ module.exports = (pool) => {
   };
 
   const list = (callback) => {
-    const statement = `SELECT *
-    FROM food`;
+    const statement = 'SELECT food.name, food.id FROM food WHERE NOT EXISTS(SELECT fave.id FROM fave WHERE fave.food_id = food.id)';
 
     pool.query(statement, null, (err, result) => {
       callback(err, result);
