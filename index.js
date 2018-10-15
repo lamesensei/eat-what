@@ -3,6 +3,7 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const reactEngine = require('express-react-views').createEngine();
 const fileUpload = require('express-fileupload');
+require('dotenv').config();
 
 const db = require('./db');
 const routes = require('./routes');
