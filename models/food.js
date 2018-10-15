@@ -5,8 +5,9 @@ module.exports = (pool) => {
     FROM food 
     INNER JOIN nearby ON(food.location_id=nearby.nearby_location_id)
     INNER JOIN location ON(nearby_location_id=location.id)
-    WHERE current_location_id=($1)`;
-    const values = [params];
+    INNER JOIN fave ON (food.id=fave.food_id)
+    WHERE current_location_id=($1) AND fave.user_id=($2)`;
+    const values = [params.location, params.userid];
 
     pool.query(statement, values, (err, result) => callback(err, result));
   };

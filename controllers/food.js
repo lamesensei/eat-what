@@ -23,11 +23,12 @@ module.exports = (db, user) => {
   };
 
   const solo = (req, res) => {
-    const location = {
-      id: 1,
+    const params = {
+      location: 1,
+      userid: req.cookies.loggedin.id,
     };
     if (user.checkLogin(req.cookies.loggedin)) {
-      db.food.solo(location.id, (err, result) => {
+      db.food.solo(params, (err, result) => {
         if (err) console.error(err);
         else if (result.rowCount >= 1) {
           const dice = getRandomInt(0, result.rows.length);
