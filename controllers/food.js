@@ -176,8 +176,12 @@ module.exports = (db, user) => {
       db.food.faveList(req.cookies.loggedin.id, (err, result) => {
         if (err) console.error(err);
         else if (result.rowCount >= 1) {
-          return res.render('food/favelist', { currentUser: req.cookies.loggedin });
+          return res.render('food/favelist', {
+            currentUser: req.cookies.loggedin,
+            places: result.rows,
+          });
         }
+        return res.redirect('/food');
       });
     }
   };
@@ -219,6 +223,21 @@ module.exports = (db, user) => {
     }
   };
 
+  const faveRemove = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      db.food.faveRemove(req.params.id, (err, result) => {
+        if (err) console.error(err);
+        else if (result.rowCount >= 1) {
+          res.render('food/curate', {
+            currentUser: req.cookies.loggedin,
+            success: result.rows[0],
+            action: null,
+          });
+        }
+      });
+    }
+  };
+
   return {
     eat,
     solo,
@@ -233,6 +252,7 @@ module.exports = (db, user) => {
     fave,
     faveList,
     faveJson,
+    faveRemove,
     list,
     listJson,
   };

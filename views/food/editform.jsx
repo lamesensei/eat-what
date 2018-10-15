@@ -22,7 +22,7 @@ class EditForm extends React.Component {
         <div className="container">
           <div className="row mt-2">
             <div className="alert alert-info w-100 text-center" role="alert">
-              <h4 className="alert-heading">Edit Place</h4>
+              <strong>Edit Place</strong>
             </div>
           </div>
           <form className="" action={`/food/${this.props.place.id}/edit?_method=PUT`} method="post">

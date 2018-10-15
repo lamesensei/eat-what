@@ -24,4 +24,5 @@ module.exports = (app, db) => {
   app.post('/food/:id/fave', food.fave);
   app.put('/food/:id/edit', food.edit);
   app.delete('/food/:id/delete', food.remove);
+  app.delete('/food/:id/fave/delete', food.faveRemove);
 };

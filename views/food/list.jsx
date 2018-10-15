@@ -27,6 +27,8 @@ class List extends React.Component {
           <div className="row mt-2">
             <div className="alert alert-info w-100 text-center" role="alert">
               <h4 className="alert-heading">Food List</h4>
+              <hr />
+              <p>Add a favourite by pressing the heart button.</p>
             </div>
           </div>
           <div className="row mt-3 foodlist">{listItems}</div>

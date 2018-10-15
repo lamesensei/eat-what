@@ -12,7 +12,7 @@ class Login extends React.Component {
         <div className="container">
           <div className="row mt-2">
             <div className="alert alert-info w-100 text-center" role="alert">
-              <h4 className="alert-heading">Login</h4>
+              <strong>Login</strong>
             </div>
           </div>
           <form className="" action="/users/login" method="post">

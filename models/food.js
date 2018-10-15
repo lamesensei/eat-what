@@ -125,6 +125,15 @@ module.exports = (pool) => {
     });
   };
 
+  const faveRemove = (params, callback) => {
+    const statement = 'DELETE FROM fave WHERE id = ($1) RETURNING *';
+    const values = [params];
+
+    pool.query(statement, values, (err, result) => {
+      callback(err, result);
+    });
+  };
+
   return {
     solo,
     getCurrentLocation,
@@ -137,6 +146,7 @@ module.exports = (pool) => {
     fave,
     faveList,
     faveJson,
+    faveRemove,
     list,
   };
 };

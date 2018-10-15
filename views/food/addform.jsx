@@ -13,7 +13,7 @@ class AddForm extends React.Component {
         <div className="container">
           <div className="row mt-2">
             <div className="alert alert-info w-100 text-center" role="alert">
-              <h4 className="alert-heading">Add New Place</h4>
+              <strong>Add New Place</strong>
             </div>
           </div>
           <form className="" action="/food" method="post" encType="multipart/form-data">
