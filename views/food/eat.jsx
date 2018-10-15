@@ -26,6 +26,7 @@ class Eat extends React.Component {
             </div>
           </div>
         </div>
+        <script src="/scripts/geolocation.js" />
       </Default>
     );
   }

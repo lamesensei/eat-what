@@ -34,6 +34,7 @@ class Default extends React.Component {
             crossOrigin="anonymous"
           />
           <link rel="stylesheet" href="/stylesheets/main.css" />
+          <title>EAT WHAT?</title>
         </head>
         <body className={bodyclass}>
           <header>

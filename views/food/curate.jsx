@@ -24,10 +24,13 @@ class Curate extends React.Component {
             </div>
           </div>
           <div className="row mt-3">
+            <a className="btn btn-success btn-block" href="/food" role="button">
+              List All Places
+            </a>
             <a className="btn btn-success btn-block" href="/food/add" role="button">
               Add New Place
             </a>
-            <a className="btn btn-info btn-block" href="/food/fave" role="button">
+            <a className="btn btn-danger btn-block" href="/food/fave" role="button">
               Favourite Place(s)
             </a>
             <a className="btn btn-warning btn-block" href="/food/edit" role="button">

@@ -117,6 +117,15 @@ module.exports = (pool) => {
     });
   };
 
+  const list = (callback) => {
+    const statement = `SELECT *
+    FROM food`;
+
+    pool.query(statement, null, (err, result) => {
+      callback(err, result);
+    });
+  };
+
   return {
     solo,
     getCurrentLocation,
@@ -129,5 +138,6 @@ module.exports = (pool) => {
     fave,
     faveList,
     faveJson,
+    list,
   };
 };

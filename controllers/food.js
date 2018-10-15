@@ -59,7 +59,7 @@ module.exports = (db, user) => {
 
   const create = (req, res) => {
     if (user.checkLogin(req.cookies.loggedin)) {
-      let photo = req.files.photo;
+      const photo = req.files.photo;
       photo.mv(`public/uploads/${photo.name}`, (uploadErr) => {
         const params = {
           name: req.body.name,
@@ -193,6 +193,30 @@ module.exports = (db, user) => {
     }
   };
 
+  const list = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      db.food.list((err, result) => {
+        if (err) console.error(err);
+        else if (result.rowCount >= 1) {
+          res.render('food/list', {
+            currentUser: req.cookies.loggedin,
+          });
+        }
+      });
+    }
+  };
+
+  const listJson = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      db.food.list((err, result) => {
+        if (err) console.error(err);
+        else if (result.rowCount >= 1) {
+          res.json(result.rows);
+        }
+      });
+    }
+  };
+
   return {
     eat,
     solo,
@@ -207,5 +231,7 @@ module.exports = (db, user) => {
     fave,
     faveList,
     faveJson,
+    list,
+    listJson,
   };
 };

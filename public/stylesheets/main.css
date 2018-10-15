@@ -21,6 +21,10 @@ label {
   font-weight: bold;
 }
 
+.btn {
+  font-weight: bold;
+}
+
 .resize {
   font-size: 10vw;
 }

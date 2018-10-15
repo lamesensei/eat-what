@@ -18,6 +18,8 @@ module.exports = (app, db) => {
   app.get('/food/:id/edit', food.editForm);
   app.get('/food/fave', food.faveList);
   app.get('/food/fave.json', food.faveJson);
+  app.get('/food.json', food.listJson);
+  app.get('/food', food.list);
   app.post('/food', food.create);
   app.post('/food/:id/fave', food.fave);
   app.put('/food/:id/edit', food.edit);
