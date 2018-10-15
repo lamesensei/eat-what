@@ -11,6 +11,12 @@ class Result extends React.Component {
               <h4 className="alert-heading">{this.props.result.name}</h4>
               <p>@ {this.props.result.location}</p>
               <hr />
+              <img
+                src={this.props.result.image}
+                className="img-fluid rounded img-thumbnail"
+                alt=""
+              />
+              <hr />
               <p>"{this.props.result.description}"</p>
             </div>
             <a href="/food/solo" className="btn btn-lg btn-info text-light mx-auto">

@@ -22,7 +22,8 @@ CREATE TABLE IF NOT EXISTS food (
   description TEXT,
   added TIMESTAMPTZ DEFAULT now(),
   location_id INTEGER,
-  author_id INTEGER
+  author_id INTEGER,
+  image TEXT
 );
 
 CREATE TABLE IF NOT EXISTS category (

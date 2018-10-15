@@ -37,7 +37,7 @@ class AddForm extends React.Component {
                   name="photo"
                   required
                 />
-                <label class="custom-file-label" for="validatedCustomFile">
+                <label class="custom-file-label" htmlFor="validatedCustomFile">
                   Choose File...
                 </label>
               </div>
