@@ -91,6 +91,32 @@ module.exports = (pool) => {
     });
   };
 
+  const faveList = (params, callback) => {
+    const statement = `SELECT *
+    FROM food 
+    INNER JOIN fave ON (food.id = fave.food_id)
+    WHERE fave.user_id = ($1)`;
+
+    const values = [params];
+
+    pool.query(statement, values, (err, result) => {
+      callback(err, result);
+    });
+  };
+
+  const faveJson = (params, callback) => {
+    const statement = `SELECT *
+    FROM food 
+    INNER JOIN fave ON (food.id = fave.food_id)
+    WHERE fave.user_id = ($1)`;
+
+    const values = [params];
+
+    pool.query(statement, values, (err, result) => {
+      callback(err, result);
+    });
+  };
+
   return {
     solo,
     getCurrentLocation,
@@ -101,5 +127,7 @@ module.exports = (pool) => {
     edit,
     remove,
     fave,
+    faveList,
+    faveJson,
   };
 };

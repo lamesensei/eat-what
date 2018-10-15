@@ -167,6 +167,28 @@ module.exports = (db, user) => {
     }
   };
 
+  const faveList = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      db.food.faveList(req.cookies.loggedin.id, (err, result) => {
+        if (err) console.error(err);
+        else if (result.rowCount >= 1) {
+          res.render('food/favelist', { currentUser: req.cookies.loggedin });
+        }
+      });
+    }
+  };
+
+  const faveJson = (req, res) => {
+    if (user.checkLogin(req.cookies.loggedin)) {
+      db.food.faveList(req.cookies.loggedin.id, (err, result) => {
+        if (err) console.error(err);
+        else if (result.rowCount >= 1) {
+          res.json(result.rows);
+        }
+      });
+    }
+  };
+
   return {
     eat,
     solo,
@@ -179,5 +201,7 @@ module.exports = (db, user) => {
     edit,
     remove,
     fave,
+    faveList,
+    faveJson,
   };
 };

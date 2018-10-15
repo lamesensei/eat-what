@@ -11,7 +11,7 @@ class Home extends React.Component {
       user = this.props.currentUser.login;
       bottom = 'invisible';
       logo = 'invisible order-1';
-      welcome = 'logo mx-auto text-center order-0';
+      welcome = 'logo mx-auto text-center order-0 resize';
     }
     return (
       <Default bodyclasslist="homebg" currentUser={user}>
