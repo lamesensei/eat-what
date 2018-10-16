@@ -26,6 +26,7 @@ Install npm packages.
 `npm install`
 
 Initiate the PSQL db with the .sql files located within the directory. (_You maybe required to change the connection details in db.js_)
+
 `psql -d eatwhatdb -f *.sql`
 
 Initiate the app via node.
