@@ -8,9 +8,11 @@ The following instructions should get the app up and running on local host.
 
 ### Prequisites
 Node.js & NPM
+
 `brew install node`
 
 PostgreSQL
+
 `brew install postgresql`
 
 ### Installation
