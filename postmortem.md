@@ -18,9 +18,11 @@ Please answer the following questions. Take at least 30 minutes to prepare.
 #### Approach and Process
 
 1. What in my process and approach to this project would I do differently next time?
+
    **Focus more on a single core feature even if meant forgoing 'basic' deliverables like database/crud. Deciding to forgo prior assignment's furthers have greatly impeded progress for the project - will attempt all furthers from now on.**
 
 2) What in my process and approach to this project went well that I would repeat next time?
+
    **Usage of trello/kanban boards to break down features into smaller components & pomodoro method for focus.**
 
 --
@@ -114,8 +116,11 @@ For each, please include code examples.
 #### WDI Unit 2 Post Mortem
 
 1. What habits did I use during this unit that helped me?
+
    **Trello/Pomodoro**
 2. What habits did I have during this unit that I can improve on?
+
    **Giving up on core functions 'just because' of 'x' reason**
 3. How is the overall level of the course during this unit? (instruction, course materials, etc.)
+
    **Fair, most learning achieved during self-study and disovery. Gitbook could use some corrections (yarn etc)**
