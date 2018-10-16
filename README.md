@@ -6,14 +6,14 @@ An attempt to answer the biggest question plaguing mankind.
 
 The following instructions should get the app up and running on local host.
 
-###Prequisites
+### Prequisites
 Node.js & NPM
 `brew install node`
 
 PostgreSQL
 `brew install postgresql`
 
-###Installation
+### Installation
 
 Clone/fork the repository.
 
@@ -30,26 +30,26 @@ Initiate the app via node.
 
 `node index.js`
 
-##Built With
+## Built With
 
 - [Express](https://nodejs.org/en/) - Main framework.
 - [PSQL](https://postgresql.com) - Database.
 - [React](https://reactjs.org) - View rendering.
 
-##Review
+## Review
 See **postmortem.md** for more.
 
-###Todo/Issues
+### Todo/Issues
 
 1. Friends feature is not implemented.
 2. Location feature is not completed and hard coded.
 3. Error checking not fully implemented.
 4. UI design can be improved.
 
-###User Stories
+### User Stories
 How I planned my project.
 ![userstoriesimage](trelloboard.png)
-###Wireframe
+### Wireframe
 Basic wireframes from start of project
 
 ---
