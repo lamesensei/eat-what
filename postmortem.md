@@ -19,7 +19,7 @@ Please answer the following questions. Take at least 30 minutes to prepare.
 
 1. What in my process and approach to this project would I do differently next time?
 
-   **Focus more on a single core feature even if meant forgoing 'basic' deliverables like database/crud. Deciding to forgo prior assignment's furthers have greatly impeded progress for the project - will attempt all furthers from now on.**
+   **Focus more on a single core feature even if meant forgoing 'basic' deliverables like database/crud. Deciding to forgo prior assignment's furthers have greatly impeded progress for the project - will attempt all furthers from now on. Another problem = coding around bootstrap or bootstrapping after code.**
 
 2) What in my process and approach to this project went well that I would repeat next time?
 
