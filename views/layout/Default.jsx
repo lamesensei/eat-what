@@ -43,7 +43,7 @@ class Default extends React.Component {
                 EAT WHAT?
               </a>
               <div className="nav nav-justified">
-                <a href="#" className="nav-link text-light p-0 font-weight-bold">
+                <a href="food/curate" className="nav-link text-light p-0 font-weight-bold">
                   <u>{this.props.currentUser}</u>
                 </a>
                 {logout}
