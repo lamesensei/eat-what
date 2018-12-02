@@ -1,68 +1,64 @@
 # EAT WHAT?
 
+![](docs/screenshot.jpg)
+
 An attempt to answer the biggest question plaguing mankind.
 
-## Getting Started
+## Features
 
-The following instructions should get the app up and running on local host.
+- Designed for on the go mobile usage
+- Store and list your favourite eating spots
+- Never spend time deciding what to eat again
 
-### Prequisites
+## Installation
+
 Node.js & NPM
 
-`brew install node`
+```
+brew install node
+```
 
 PostgreSQL
 
-`brew install postgresql`
-
-### Installation
+```
+brew install postgresql
+```
 
 Clone/fork the repository.
 
-`git clone https://github.com/lamesensei/eat-what.git`
+```
+git clone https://github.com/lamesensei/eat-what.git
+```
 
 Install npm packages.
 
-`npm install`
+```
+cd eat-what
+npm install
+```
 
-Initiate the PSQL db with the .sql files located within the directory. (_You maybe required to change the connection details in db.js_)
+Create the postgres database with the seed data provided. (_You maybe required to change the connection details in db.js_)
 
-`psql -d eatwhatdb -f *.sql`
+```
+psql -d eatwhatdb -f *.sql
+```
 
 Initiate the app via node.
 
-`node index.js`
+```
+node index.js
+```
 
-## Built With
+## Technologies
 
-- [Express](https://nodejs.org/en/) - Main framework.
-- [PSQL](https://postgresql.com) - Database.
-- [React](https://reactjs.org) - View rendering.
+- [Express](https://nodejs.org/en/) - Routing and rendering
+- [PostgreSQL](https://postgresql.com) - Database
+- [React](https://reactjs.org) - Front-end
 
 ## Review
-See **postmortem.md** for more.
 
-### Todo/Issues
+See [postmortem.md](docs/postmortem.md) for more.
 
-1. Friends feature is not implemented.
-2. Location feature is not completed and hard coded.
-3. Error checking not fully implemented.
-4. UI design can be improved.
+## Docs
 
-### User Stories
-How I planned my project.
-![userstoriesimage](trelloboard.png)
-### Wireframe
-Basic wireframes from start of project
-
----
-
-![wireframe1](wireframe1.jpg)
-
----
-
-![wireframe1](wireframe2.jpg)
-
----
-
-![wireframe1](wireframe3.jpg)
+See [docs folder](docs).
